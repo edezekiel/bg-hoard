@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { Game } from '@bg-hoard/api/util-interface';
 
 const games = [
   {
@@ -30,11 +31,11 @@ const games = [
 
 @Injectable()
 export class AppService {
-  getAllGames() {
+  getAllGames(): Game[] {
     return games;
   }
 
-  getGame(id: string) {
+  getGame(id: string): Game {
     return games.find((game) => game.id === id);
   }
 }
