@@ -11,8 +11,8 @@ import { MatCardModule } from '@angular/material/card';
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
-    MatCardModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
