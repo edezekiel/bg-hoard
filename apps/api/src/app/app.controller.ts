@@ -1,8 +1,7 @@
-import { Controller, Get } from '@nestjs/common';
-
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 
-@Controller()
+@Controller('games')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
@@ -10,8 +9,9 @@ export class AppController {
   getAllGames() {
     return this.appService.getAllGames();
   }
-  @Get()
-  getGame(id: string) {
+
+  @Get('/:id')
+  getGame(@Param('id') id: string) {
     return this.appService.getGame(id);
   }
 }

@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Pipe, PipeTransform } from '@angular/core';
-import { getAllGames } from '../fake-api';
 import { formatRating } from '@bg-hoard/store/util-formatters';
 
 @Component({
@@ -9,8 +9,9 @@ import { formatRating } from '@bg-hoard/store/util-formatters';
 })
 export class AppComponent {
   title = 'Board Game Hoard';
-  games = getAllGames();
-  formatRating = formatRating;
+  games$ = this._http.get<any[]>('/api/games');
+
+  constructor(private readonly _http: HttpClient) {}
 }
 
 @Pipe({ name: 'formatRating' })
