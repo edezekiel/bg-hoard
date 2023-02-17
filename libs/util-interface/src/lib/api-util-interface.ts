@@ -1,7 +1,3 @@
-export function apiUtilInterface(): string {
-  return 'api-util-interface';
-}
-
 export interface Game {
   id: string;
   name: string;

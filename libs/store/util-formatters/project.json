@@ -4,16 +4,6 @@
   "sourceRoot": "libs/store/util-formatters/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nrwl/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/store/util-formatters",
-        "main": "libs/store/util-formatters/src/index.ts",
-        "tsConfig": "libs/store/util-formatters/tsconfig.lib.json",
-        "assets": ["libs/store/util-formatters/*.md"]
-      }
-    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
@@ -22,13 +12,20 @@
       }
     },
     "test": {
-      "executor": "@nrwl/vite:test",
-      "outputs": ["coverage/libs/store/util-formatters"],
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "passWithNoTests": true,
-        "reportsDirectory": "../../../coverage/libs/store/util-formatters"
+        "jestConfig": "libs/store/util-formatters/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
       }
     }
   },
-  "tags": ["scope:store", "type:util"]
+  "tags": ["scope:store", "type:util"],
+  "implicitDependencies": []
 }

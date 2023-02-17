@@ -4,8 +4,8 @@ export const appRoutes: Route[] = [
   {
     path: 'game/:id',
     loadChildren: () =>
-      import('@bg-hoard/store/feature-game-details').then(
-        (m) => m.StoreFeatureGameDetailsModule
+      import('@bg-hoard/store/feature-game-detail').then(
+        (m) => m.StoreFeatureGameDetailModule
       ),
   },
 ];

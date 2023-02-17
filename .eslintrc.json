@@ -18,44 +18,23 @@
               },
               {
                 "sourceTag": "scope:api",
-                "onlyDependOnLibsWithTags": [
-                  "scope:api",
-                  "scope:shared",
-                  "type:domain"
-                ]
+                "onlyDependOnLibsWithTags": ["scope:api", "scope:shared"]
               },
               {
                 "sourceTag": "type:feature",
                 "onlyDependOnLibsWithTags": [
+                  "type:feature",
                   "type:ui",
-                  "type:util",
-                  "type:domain",
-                  "type:data-access"
+                  "type:util"
                 ]
-              },
-              {
-                "sourceTag": "type:data-access",
-                "onlyDependOnLibsWithTags": ["type:util", "type:domain"]
               },
               {
                 "sourceTag": "type:ui",
-                "onlyDependOnLibsWithTags": [
-                  "type:ui",
-                  "type:util",
-                  "type:domain"
-                ]
+                "onlyDependOnLibsWithTags": ["type:ui", "type:util"]
               },
               {
                 "sourceTag": "type:util",
-                "onlyDependOnLibsWithTags": ["type:util", "type:domain"]
-              },
-              {
-                "sourceTag": "type:domain",
-                "onlyDependOnLibsWithTags": ["type:domain"]
-              },
-              {
-                "sourceTag": "type:e2e",
-                "onlyDependOnLibsWithTags": ["type:domain", "type:feature"]
+                "onlyDependOnLibsWithTags": ["type:util"]
               }
             ]
           }
